@@ -20,6 +20,10 @@
         ul{
             list-style: none;
             width: 100%;
+            .link{
+                color: #FFBD59;
+                text-decoration: none;
+            }
             li{
                 display: flex;
                 align-items: center;
