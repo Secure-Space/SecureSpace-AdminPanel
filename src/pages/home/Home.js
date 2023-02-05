@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <div className='Home'>
         <SideBar/>
-        <div className='container'>hi</div>
+        <div className='container'>
+            <h1>Home</h1>
+        </div>
     </div>
   )
 }

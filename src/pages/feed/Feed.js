@@ -2,9 +2,16 @@ import React from 'react';
 
 import './Feed.scss';
 
+import SideBar from '../../components/SideBar/SideBar';
+
 const Feed = () => {
   return (
-    <div>Feed</div>
+    <div className='Feed'>
+      <SideBar/>
+      <div className='container'>
+        <h1>Feed</h1>
+      </div>
+    </div>
   )
 }
 

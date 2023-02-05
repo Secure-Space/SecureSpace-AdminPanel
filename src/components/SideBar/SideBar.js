@@ -33,10 +33,10 @@ const SideBar = () => {
             <span className="text">Feed</span>
           </li>
           </Link>
-          <Link to="/noti" className="link">
+          <Link to="/notif" className="link">
           <li>
             <UilBell />
-            <span className="text">Notification</span>
+            <span className="text">Notifications</span>
           </li>
           </Link>
           <Link to="/profile" className="link">
