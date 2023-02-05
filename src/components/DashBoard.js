@@ -2,6 +2,7 @@ import React from "react";
 import './DashBoard.css'
 
 import SideBar from "./SideBar";
+import MainBar from "./MainBar";
 
 
 function DashBoard(){
@@ -11,7 +12,7 @@ function DashBoard(){
         <SideBar/>
     </div>
     <div>
-      
+        <MainBar/>
     </div>
   </div>
     )

@@ -1,0 +1,12 @@
+.MainBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 70px;
+}
+
+.Cal{
+    color: black;
+    border-radius: 20px;
+}
