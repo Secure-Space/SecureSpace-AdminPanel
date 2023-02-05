@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+
+import './Home.scss';
+
+import SideBar from '../../components/SideBar/SideBar';
 
 const Home = () => {
   return (
-    <div>Homedsfsdf</div>
+    <div className='Home'>
+        <SideBar/>
+        <div className='container'>hi</div>
+    </div>
   )
 }
 

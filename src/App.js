@@ -17,6 +17,7 @@ import Profile from "./pages/profile/Profile";
 function App() {
   return (
     <div className='App'>
+      <div className="DashBoard">
       <BrowserRouter>
         <Routes>
           <Route path = "/">
@@ -27,6 +28,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </div>
     </div>
   )
 }

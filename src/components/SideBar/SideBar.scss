@@ -1,0 +1,43 @@
+.SideBar{
+    background-color: #2b2b2b;
+    color: #FFBD59;
+    flex:1;
+    .top{
+        height:150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo{
+            height:150%;
+            width: 90%;
+        }
+    }
+    .contents{
+        display: flex;
+        // padding-top: 40px;
+        margin-top: 40px;
+        border-right: 0.5px solid gray;
+        ul{
+            list-style: none;
+            width: 100%;
+            li{
+                display: flex;
+                align-items: center;
+                padding: 30px;
+                font-size: 23px;
+                cursor: pointer;
+                .text{
+                    padding-left: 30px;
+                }
+                &:hover{
+                    background-color: #5b5b5b;
+                }
+            }
+        }
+    }
+    .bottom{
+        height: 93px;
+        
+
+    }
+}
