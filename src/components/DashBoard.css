@@ -1,8 +1,0 @@
-.DashBoard{
-    display: grid;
-    width: 95%;
-    height: 90vh;
-    background-color: #2B2B2B;
-    border-radius: 20px;
-    grid-template-columns: 25% auto;
-}
