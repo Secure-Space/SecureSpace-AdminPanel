@@ -8,6 +8,9 @@ import './App.css';
 
 import "@fontsource/ubuntu";
 
+// page imports
+import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/home/Home";
 import Feed from "./pages/feed/Feed";
 import Notification from "./pages/notification/Notification";
@@ -21,7 +24,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path = "/">
-            <Route index element = {<Home/>}/>
+            <Route index element = {<SignIn/>}/>
+            <Route path = "/signup" element={<SignUp/>}/>
+            <Route path = "/home" element={<Home/>}/>
             <Route path = "/feed" element={<Feed/>}/>
             <Route path = "/notif" element={<Notification/>}/>
             <Route path = "/profile" element={<Profile/>}/>

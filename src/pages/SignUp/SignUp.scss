@@ -1,0 +1,62 @@
+.SignUp {
+    display: flex;
+    justify-content: center;
+    .container {
+      background-color: #2b2b2b;
+      height: 650px;
+      width: 600px;
+      margin-top: 25px;
+      border-radius: 20px;
+      .logocontain {
+          height: 30%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 30px;
+          .logo{
+              height:250px;
+              width: 250px;
+          }
+      }
+      .form{
+          display: flex;
+          flex-direction: column;
+          height: 60%;
+          // justify-content: center;
+          align-items: center;
+          color: white;
+          .input{
+              background-color: #2b2b2b;
+              color: white;
+              font-size: 15px;
+              height: 40px;
+              width: 350px;
+              margin: 10px 15px;
+              padding-left: 10px;
+              border: 3px solid #FFBD59;
+              border-radius: 20px;
+              outline: none;
+          }
+          .buttoncontain{
+              display: flex;
+              justify-content: center;
+          .button{
+              height: 45px;
+              width: 230px;
+              margin-top: 30px;
+              margin-bottom: 30px;
+              background-color: #FFBD59;
+              border: 0px;
+              border-radius: 20px;
+              font-size: 17px;
+          }
+      }
+          .redirect{
+              text-decoration: none;
+              color: #FFBD59;
+              margin-left:2px;
+          }
+      }
+    }
+  }
+  

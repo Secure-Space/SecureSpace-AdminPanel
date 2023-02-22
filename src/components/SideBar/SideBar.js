@@ -21,7 +21,7 @@ const SideBar = () => {
       </div>
       <div className="contents">
         <ul>
-        <Link to="/" className="link">
+        <Link to="/home" className="link">
           <li>
             <UilEstate />
             <span className="text">Home</span>
