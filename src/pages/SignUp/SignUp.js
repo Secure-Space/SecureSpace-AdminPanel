@@ -13,6 +13,7 @@ const SignUp = () => {
         <div className="logocontain">
           <img src={Logo} alt="" className="logo" />
         </div>
+        {/* form begins  */}
         <div className="form">
             <form>
             <div >
