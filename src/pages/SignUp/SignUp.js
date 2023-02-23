@@ -34,6 +34,16 @@ const navigate = useNavigate();
       });
   };
 
+  function check() {
+    var input = document.getElementById('password_confirm');
+    if (input.value !== document.getElementById('password').value) {
+        input.setCustomValidity('Password Must be Matching.');
+    } else {
+        // input is valid -- reset the error message
+        input.setCustomValidity('');
+    }
+}
+
   return (
     <div className="SignUp">
       <div className="container">
@@ -64,6 +74,8 @@ const navigate = useNavigate();
               <input
                 type="password"
                 placeholder="Enter your password"
+                id="password"
+                onInput={check}
                 className="input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -74,6 +86,8 @@ const navigate = useNavigate();
               <input
                 type="password"
                 placeholder="Re-enter your password"
+                id="password_confirm"
+                onInput={check}
                 className="input"
               ></input>
             </div>
