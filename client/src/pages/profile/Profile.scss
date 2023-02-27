@@ -1,0 +1,48 @@
+.Profile{
+    display: flex;
+    .container{
+        background-color: #2B2B2B;
+        flex:4;
+        color: white;
+        padding-left: 60px;
+        padding-top: 50px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        .title {
+            color: white;
+          }
+          .contentcontainer {
+            display: flex;
+            flex-direction: row;
+            margin-top: 40px;
+            .row1 {
+                display: flex;
+                flex:1;
+                flex-direction: column;
+                margin-top: 60px;
+            }
+            .row2 {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                margin-top: 60px;
+                margin-left: 35px;
+                // height: 90%;
+                // width: 90%;
+                .Pdetails{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #FFBD59;
+                    color: black;
+                    filter: brightness(80%);
+                }
+                .Econtact{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #FFBD59;
+                    color: black;
+                }
+            }
+          }
+    }
+}
