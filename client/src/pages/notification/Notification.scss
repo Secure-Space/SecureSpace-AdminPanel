@@ -8,5 +8,23 @@
         padding-top: 50px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
+        .contentcontainer{
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+            width:85%;
+            .NotifBox{
+                display: flex;
+                flex-direction: column;
+                .NotifContain{
+                    background-color: #FFBD59;
+                    min-height: 40px;
+                    padding: 5px;
+                    border-radius: 20px;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
     }
 }

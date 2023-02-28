@@ -1,44 +1,41 @@
-import React from 'react';
+import React from "react";
 
-import './Profile.scss';
+import "./Profile.scss";
 
-import SideBar from '../../components/SideBar/SideBar';
+import SideBar from "../../components/SideBar/SideBar";
 
 const Profile = () => {
   return (
-    <div className='Profile'>
-      <SideBar/>
-      <div className='container'>
-        <h1 className='title'>Profile</h1>
-        <div className='contentcontainer'>
-          <div className='row1'>
-
+    <div className="Profile">
+      <SideBar />
+      <div className="container">
+        <h1 className="title">Profile</h1>
+        <div className="contentcontainer">
+          <div className="row1">
+            <div className="Ppic"></div>
+            <div className="PName">
+              Nigesh Raj
+            </div>
           </div>
-          <div className='row2'>
-            <div className='Pdetails'>
-            <ul>
-              <li>
-                PERSONAL DETAILS
-              </li>
-              <li>
-                First Name
-              </li>
-              <li>
-                Last Name
-              </li>
-              <li>
-                Age
-              </li>
-            </ul>
+          <div className="row2">
+            <div className="Pdetails">
+              <text className="Ptitle">PERSONAL DETAILS</text>
+              <text>First Name:</text>
+              <text>Last Name:</text>
+              <text>Age:</text>
+              <text>Gender:</text>
+              <text>Address:</text>
+              <text>Phone No:</text>
+              <text>Email Id:</text>
             </div>
-            <div className='Econtact'>
-            EMERGENCY CONTACTS
-            </div>
+            <div className="Econtact">
+              <text className="Etitle">EMERGENCY CONTACTS</text>
+              </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
