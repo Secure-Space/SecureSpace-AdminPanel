@@ -1,76 +1,81 @@
-.Profile{
-    display: flex;
-    .container{
-        background-color: #2B2B2B;
-        flex:4;
-        color: white;
-        padding-left: 60px;
-        padding-top: 50px;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        .title {
-            color: white;
-          }
-          .contentcontainer {
-            display: flex;
-            flex-direction: column;
-            margin-top: 40px;
-            width:85%;
-            .row1 {
-                display: flex;
-                flex:1;
-                flex-direction: row;
-                margin-top: 60px;
-                .Ppic{
-
-                }
-                .PName{
-                    color: white;
-                    font-size: 25px;
-                }
-            }
-            .row2 {
-                display: flex;
-                flex: 1;
-                flex-direction: row;
-                margin-top: 60px;
-                margin-left: 35px;
-                // height: 90%;
-                // width: 60%;
-                .Pdetails{
-                    display: flex;
-                    flex-direction: column;
-                    background-color: #FFBD59;
-                    color: black;
-                    width: 60%;
-                    border-radius: 10px;
-                    padding-left: 13px;
-                    padding-right: 13px;
-                    padding-top: 5px;
-                    filter: brightness(80%);
-                    margin-bottom: 20px;
-                    margin-right: 30px;
-                    .Ptitle{
-                        border-bottom: 2px solid black;
-                    }
-
-                }
-                .Econtact{
-                    display: flex;
-                    flex-direction: column;
-                    background-color: #FFBD59;
-                    color: black;
-                    width: 60%;
-                    border-radius: 10px;
-                    padding-left: 13px;
-                    padding-right: 13px;
-                    padding-top: 5px;
-                    filter: brightness(80%);
-                    .Etitle{
-                        border-bottom: 2px solid black;
-                    }
-                }
-            }
-          }
+.Profile {
+  display: flex;
+  .container {
+    background-color: #2b2b2b;
+    flex: 4;
+    color: white;
+    padding-left: 60px;
+    padding-top: 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    .title {
+      color: white;
     }
+    .contentcontainer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      width: 85%;
+      .row1 {
+        display: flex;
+        // flex: 1;
+        flex-direction: row;
+        margin-top: 60px;
+        .Ppic {
+            background-color: black;
+            height: 170px;
+            width: 170px;
+            border-radius: 40px;
+        }
+        .PName {
+          color: white;
+          font-size: 40px;
+          margin-top: 30px;
+          margin-left: 100px;
+        }
+      }
+      .row2 {
+        display: flex;
+        // flex: 1;
+        flex-direction: row;
+        margin-top: 60px;
+        margin-left: 35px;
+        // height: 90%;
+        // width: 60%;
+        .Pdetails {
+          display: flex;
+          flex-direction: column;
+          background-color: #ffbd59;
+          color: black;
+          width: 50%;
+          border-radius: 10px;
+          padding-left: 13px;
+          padding-right: 13px;
+          padding-top: 5px;
+          filter: brightness(80%);
+          margin-bottom: 20px;
+          margin-right: 30px;
+          .Ptitle {
+            border-bottom: 2px solid black;
+          }
+        }
+        .Econtact {
+          display: flex;
+          flex-direction: column;
+          background-color: #ffbd59;
+          color: black;
+          width: 50%;
+          
+          border-radius: 10px;
+          padding-left: 13px;
+          padding-right: 13px;
+          padding-top: 5px;
+          filter: brightness(80%);
+          .Etitle {
+            border-bottom: 2px solid black;
+          }
+        }
+      }
+    }
+  }
 }

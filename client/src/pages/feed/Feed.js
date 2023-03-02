@@ -33,7 +33,7 @@ const Feed = () => {
             <div className="subtitle">
               <text>User Activities</text>
             </div>
-            <div className="ActBar">bleh</div>
+            <div className="ActBar">ACTIVITY CHART</div>
             <div className="ActPie">
               <PieChart className="Pie"
                 data={[

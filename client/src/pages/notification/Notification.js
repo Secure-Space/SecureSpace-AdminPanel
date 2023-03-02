@@ -11,21 +11,25 @@ const Notification = () => {
       <div className='container'>
         <h1>Notifications</h1>
         <div className='contentcontainer'>
+          {/* new box */}
           <div className='NotifBox'>
-          <text>Today</text>
-          <div className='NotifContain'>sad</div>
+          <text className='time'>Today</text>
+          <div className='NotifContain'>Notification</div>
           </div>
+          {/* new box */}
           <div className='NotifBox'>
-          <text>Yesterday</text>
-          <div className='NotifContain'>sad</div>
+          <text className='time'>Yesterday</text>
+          <div className='NotifContain'>Notification</div>
           </div>
+          {/* new box */}
           <div className='NotifBox'>
-          <text>Last Week</text>
-          <div className='NotifContain'>sad</div>
+          <text className='time'>Last Week</text>
+          <div className='NotifContain'>Notification</div>
           </div>
+          {/* new box */}
           <div className='NotifBox'>
-          <text>Miscellaneous</text>
-          <div className='NotifContain'>sad</div>
+          <text className='time'>Miscellaneous</text>
+          <div className='NotifContain'>Notification</div>
           </div>
         </div>
       </div>
