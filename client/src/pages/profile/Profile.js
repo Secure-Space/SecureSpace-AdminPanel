@@ -14,7 +14,7 @@ const Profile = () => {
           <div className="row1">
             <div className="Ppic"></div>
             <div className="PName">
-              Nigesh Raj
+              Alen Baxtar
             </div>
           </div>
           <div className="row2">

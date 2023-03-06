@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+import { Link } from "react-router-dom";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../firebase/firebase";
 
 import "./SignUp.scss";
 
@@ -10,39 +10,31 @@ import Logo from "../../images/translogo.png";
 
 const SignUp = () => {
 
-const navigate = useNavigate();
+// const navigate = useNavigate();
 
+  const [name,setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
 
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        navigate("/home");
-        // ...
+  async function signupUser(event){
+    event.preventDefault()
+    const response = await fetch('http://localhost:8000/api/signup',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        // ..
-      });
-  };
+    })
+    const data = await response.json()
+    console.log(data)
+  }
 
-  function check() {
-    var input = document.getElementById('password_confirm');
-    if (input.value !== document.getElementById('password').value) {
-        input.setCustomValidity('Password Must be Matching.');
-    } else {
-        // input is valid -- reset the error message
-        input.setCustomValidity('');
-    }
-}
+  
 
   return (
     <div className="SignUp">
@@ -58,6 +50,8 @@ const navigate = useNavigate();
                 type="text"
                 placeholder="Enter your name"
                 className="input"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               ></input>
             </div>
             <div>
@@ -75,7 +69,6 @@ const navigate = useNavigate();
                 type="password"
                 placeholder="Enter your password"
                 id="password"
-                onInput={check}
                 className="input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -87,13 +80,12 @@ const navigate = useNavigate();
                 type="password"
                 placeholder="Re-enter your password"
                 id="password_confirm"
-                onInput={check}
                 className="input"
               ></input>
             </div>
             <div className="buttoncontain">
               <button className="button"
-               onClick={onSubmit} 
+              onClick={signupUser}
               >Sign Up</button>
             </div>
           </form>

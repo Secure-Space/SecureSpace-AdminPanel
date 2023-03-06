@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase/firebase";
 
 import "./App.css";
 
@@ -18,20 +16,6 @@ import Profile from "./pages/profile/Profile";
 
 function App() {
 
-  useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          const uid = user.uid;
-          // ...
-          console.log("uid", uid)
-        } else {
-          console.log("user is logged out")
-        }
-      });
-     
-}, [])
   return (
     <div className="App">
       <div className="DashBoard">

@@ -1,34 +1,34 @@
 import React from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+import { Link } from "react-router-dom";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../firebase/firebase";
 
 import "./SignIn.scss";
 
 import Logo from "../../images/translogo.png";
 
 const SignIn = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const SignedIn = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        navigate("/home");
-        console.log(user);
+  async function signinUser(event){
+    event.preventDefault()
+    const response = await fetch('http://localhost:8000/api/signin',{
+      method:'POST',
+      // mode: "no-cors",
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        password,
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        // const displayMessage = 'Email or Password incorrect'
-      });
-  };
+    })
+    const data = await response.json();
+    console.log(data);
+  }
   return (
     <div className="SignIn">
       <div className="container">
@@ -44,6 +44,7 @@ const SignIn = () => {
                 placeholder="Enter your email-id"
                 className="input"
                 required
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
@@ -53,6 +54,7 @@ const SignIn = () => {
                 placeholder="Enter your password"
                 className="input"
                 required
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
               {/* <div>
@@ -61,7 +63,7 @@ const SignIn = () => {
             </div>
             <div className="buttoncontain">
               <button className="button"
-               onClick={SignedIn}
+               onClick={signinUser}
               >Sign In</button>
             </div>
           </form>

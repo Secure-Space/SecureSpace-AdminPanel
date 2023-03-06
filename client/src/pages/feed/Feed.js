@@ -19,19 +19,19 @@ const Feed = () => {
           <div className="row1">
             <div className="Calcontainer">
               <div className="subtitle">
-                <text>Calendar</text>
+                Calendar
               </div>
               <Calendar onChange={setDate} value={date} />
             </div>
             <div className="Surveicontainer">
               <div className="subtitle">
-                <text>Surveillance</text>
+                Surveillance
               </div>
             </div>
           </div>
           <div className="row2">
             <div className="subtitle">
-              <text>User Activities</text>
+              User Activities
             </div>
             <div className="ActBar">ACTIVITY CHART</div>
             <div className="ActPie">

@@ -1,8 +1,5 @@
 import React from "react";
 import {Link, useNavigate} from 'react-router-dom';
-import {  signOut } from "firebase/auth";
-import {auth} from '../../firebase/firebase';
-
 import "./SideBar.scss";
 
 import Logo from "../../images/translogo.png";
@@ -17,17 +14,7 @@ import {
 
 const SideBar = () => {
 
-  const navigate = useNavigate();
- 
-  const LoggedOut = () => {               
-      signOut(auth).then(() => {
-      // Sign-out successful.
-          navigate("/");
-          console.log("Signed out successfully")
-      }).catch((error) => {
-      // An error happened.
-      });
-  }
+  
 
   return (
     <div className="SideBar">
@@ -60,7 +47,7 @@ const SideBar = () => {
             <span className="text">Profile</span>
           </li>
           </Link>
-          <li onClick={LoggedOut}>
+          <li>
             <UilSignout />
             <span className="text">Sign Out</span>
           </li>
