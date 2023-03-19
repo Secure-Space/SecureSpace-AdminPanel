@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu";
+}
+.App{
+    display: flex;
+    background: linear-gradient(
+        106.37deg,
+        #141414 80%,
+        #FFBD59 20%
+    );
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.DashBoard{
+    height: 93%;
+    width: 95%;    
+    border-radius: 20px;
+    
+}
