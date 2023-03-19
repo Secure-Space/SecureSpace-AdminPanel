@@ -13,19 +13,19 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function signinUser(event){
-    event.preventDefault()
-    const response = await fetch('http://localhost:8000/api/signin',{
-      method:'POST',
+  async function signinUser(event) {
+    event.preventDefault();
+    const response = await fetch("http://localhost:8000/api/signin", {
+      method: "POST",
       // mode: "no-cors",
-      headers:{
-        'Content-Type':'application/json'
+      headers: {
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email,
         password,
-      })
-    })
+      }),
+    });
     const data = await response.json();
     console.log(data);
   }
@@ -62,9 +62,9 @@ const SignIn = () => {
               </div> */}
             </div>
             <div className="buttoncontain">
-              <button className="button"
-               onClick={signinUser}
-              >Sign In</button>
+              <button className="button" onClick={signinUser}>
+                Sign In
+              </button>
             </div>
           </form>
           <div>

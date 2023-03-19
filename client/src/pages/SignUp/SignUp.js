@@ -9,32 +9,28 @@ import "./SignUp.scss";
 import Logo from "../../images/translogo.png";
 
 const SignUp = () => {
+  // const navigate = useNavigate();
 
-// const navigate = useNavigate();
-
-  const [name,setName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
-  async function signupUser(event){
-    event.preventDefault()
-    const response = await fetch('http://localhost:8000/api/signup',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
+  async function signupUser(event) {
+    event.preventDefault();
+    const response = await fetch("http://localhost:8000/api/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name,
         email,
         password,
-      })
-    })
-    const data = await response.json()
-    console.log(data)
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
   }
-
-  
 
   return (
     <div className="SignUp">
@@ -72,7 +68,7 @@ const SignUp = () => {
                 className="input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required 
+                required
               ></input>
             </div>
             <div>
@@ -84,9 +80,9 @@ const SignUp = () => {
               ></input>
             </div>
             <div className="buttoncontain">
-              <button className="button"
-              onClick={signupUser}
-              >Sign Up</button>
+              <button className="button" onClick={signupUser}>
+                Sign Up
+              </button>
             </div>
           </form>
           <div>

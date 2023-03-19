@@ -15,7 +15,6 @@ import Notification from "./pages/notification/Notification";
 import Profile from "./pages/profile/Profile";
 
 function App() {
-
   return (
     <div className="App">
       <div className="DashBoard">
