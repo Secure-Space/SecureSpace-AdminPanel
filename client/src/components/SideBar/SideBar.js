@@ -47,10 +47,12 @@ const SideBar = () => {
             <span className="text">Profile</span>
           </li>
           </Link>
+          <Link to="/" className="link">
           <li>
             <UilSignout />
             <span className="text">Sign Out</span>
           </li>
+          </Link>
         </ul>
       </div>
       <div className="bottom"></div>

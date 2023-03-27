@@ -56,6 +56,15 @@ app.post("/api/signin", async (req, res) => {
   
 });
 
+
+app.get("/api/quote", async (req, res) => {
+  const token = req.headers[x-access-token]
+  
+  const decoded = jwt.verify(token, process.env.JWT_KEY)
+  
+  
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
 });

@@ -27,7 +27,14 @@ const SignIn = () => {
       }),
     });
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
+    if(data.user){
+      localStorage.setItem('token', data.user)
+      window.location.href = '/home'
+    }
+    else{
+      alert('Email or password incorrect!')
+    }
   }
   return (
     <div className="SignIn">
