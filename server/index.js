@@ -57,10 +57,19 @@ app.post("/api/signin", async (req, res) => {
 });
 
 
-app.get("/api/quote", async (req, res) => {
-  const token = req.headers[x-access-token]
-  
+app.get("/api/profile", async (req, res) => {
+  const token = req.headers['x-access-token']
+
+  try{
   const decoded = jwt.verify(token, process.env.JWT_KEY)
+  const name = decoded.name
+  const user = await User.findOne({name:name})
+  return res.json({status:'ok', name:user.name})
+  }
+  catch(error){
+    console.log(error)
+    console.log(process.env.JWT_KEY)
+  }
   
   
 });

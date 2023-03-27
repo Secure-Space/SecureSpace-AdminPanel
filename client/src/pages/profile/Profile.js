@@ -6,14 +6,20 @@ import SideBar from "../../components/SideBar/SideBar";
 
 const Profile = () => {
   // const [userData, setUserData] = useState('');
+  const [uname, setUname] = useState('')
   async function displayProfile(){
-    const req  = await('http://localhost:3000/api/profile',{
+    const response  = await fetch('http://localhost:8000/api/profile',{
     headers: {
       'x-access-token':localStorage.getItem('token'),
     }
     })
-    const data = req.json()
-    console.log(data)
+    const data = await response.json()
+    if(data.status === 'ok'){
+      setUname(data.name)
+    }
+    else{
+      alert(data.error)
+    }
   }
 
   useEffect(()=>{
@@ -31,14 +37,13 @@ const Profile = () => {
           <div className="row1">
             <div className="Ppic"></div>
             <div className="PName">
-              Alen Baxtar
+              {uname}
             </div>
           </div>
           <div className="row2">
             <div className="Pdetails">
               <text className="Ptitle">PERSONAL DETAILS</text>
-              <text>First Name:</text>
-              <text>Last Name:</text>
+              <text>Name: {uname}</text>
               <text>Age:</text>
               <text>Gender:</text>
               <text>Address:</text>
