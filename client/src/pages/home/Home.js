@@ -35,6 +35,9 @@ const Home = () => {
        <h1 className="title">Home</h1>
         <div className="contentcontainer">
           Welcome back, {uname}
+          <div className="row1">
+            geg
+          </div>
         </div>
       </div>
       

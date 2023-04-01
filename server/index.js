@@ -63,8 +63,9 @@ app.get("/api/profile", async (req, res) => {
   try{
   const decoded = jwt.verify(token, process.env.JWT_KEY)
   const name = decoded.name
+  // const email = decoded.email
   const user = await User.findOne({name:name})
-  return res.json({status:'ok', name:user.name})
+  return res.json({status:'ok', name:user.name, email:user.email})
   }
   catch(error){
     console.log(error)

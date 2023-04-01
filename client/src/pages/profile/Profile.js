@@ -7,6 +7,7 @@ import SideBar from "../../components/SideBar/SideBar";
 const Profile = () => {
   // const [userData, setUserData] = useState('');
   const [uname, setUname] = useState('')
+  const [uemail, setUemail] = useState('')
   async function displayProfile(){
     const response  = await fetch('http://localhost:8000/api/profile',{
     headers: {
@@ -16,6 +17,7 @@ const Profile = () => {
     const data = await response.json()
     if(data.status === 'ok'){
       setUname(data.name)
+      setUemail(data.email)
     }
     else{
       alert(data.error)
@@ -48,7 +50,7 @@ const Profile = () => {
               <text>Gender:</text>
               <text>Address:</text>
               <text>Phone No:</text>
-              <text>Email Id:</text>
+              <text>Email Id: {uemail}</text>
             </div>
             <div className="Econtact">
               <text className="Etitle">EMERGENCY CONTACTS</text>
