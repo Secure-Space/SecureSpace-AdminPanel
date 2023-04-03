@@ -14,6 +14,8 @@ import Feed from "./pages/feed/Feed";
 import Notification from "./pages/notification/Notification";
 import Profile from "./pages/profile/Profile";
 
+import Upload from "./pages/UploadImage/Upload";
+
 function App() {
   return (
     <div className="App">
@@ -27,6 +29,7 @@ function App() {
               <Route path="/feed" element={<Feed />} />
               <Route path="/notif" element={<Notification />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/upload" element={<Upload />} />
             </Route>
           </Routes>
         </BrowserRouter>

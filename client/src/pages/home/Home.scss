@@ -18,7 +18,33 @@
       color: white;
       font-size: 24px;
       .row1{
-        margin-top: 40px;
+        margin-top: 60px;
+        .redirect{
+          text-decoration: none;
+            color: #2b2b2b;
+            // margin-left:2px;
+        }
+        .icon{
+          font-size: 50px;
+          height: 70px;
+          width: 70px;
+        }
+        .item{
+          height: 330px;
+          width: 200px;
+          border-radius: 30px;
+          background-color: #fcba5797;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          font-size: 30px;
+        }
+        .item:hover{
+          background-color: #fcba57ce;
+          transition: 0.5s;
+          cursor: pointer;
+        }
       }
     }
   }

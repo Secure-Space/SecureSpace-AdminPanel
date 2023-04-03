@@ -1,21 +1,92 @@
 const express = require("express");
 const cors = require("cors");
+
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 
+//AWS and image processing packages
+const aws = require("aws-sdk")
+const multer = require("multer")
+const multerS3 = require("multer-s3");
+const sharp = require("sharp");
 
+const config = require("./config.json");
 require('dotenv').config();
+
 
 const User = require("./models/user.model");
 
+// PORT and EXPRESS
 const PORT = 8000;
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
+// DB ADDRESS
 mongoose.connect("mongodb://localhost:27017/secure-space");
 
+// S3 BUCKET
+const s3 = new aws.S3({
+  accessKeyId: config.accessKeyId,
+  secretAccessKey: config.secretAccessKey,
+  region: config.region
+});
+
+
+
+
+// AWS configuration and image processing
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'testingrekognition1234',
+    acl: 'public-read', 
+    ContentType: 'image/jpeg',
+    contentDisposition:'attachment',
+    shouldTransform: function (req, file, cb) {
+      cb(null, /^image/i.test(file.mimetype))
+    },
+    transforms: [{
+      id: 'original',
+      key: function (req, file, cb) {
+        cb(null, Date.now().toString())
+      },
+      transform: function (req, file, cb) {
+        cb(null, sharp().resize(800, 800).jpeg())
+      }
+    }]
+  })
+});
+
+app.post('/api/upload', async (req, res) => {
+  try {
+    await upload.single('file')(req, res, (err) => {
+      if (err) {
+        return res.status(400).json({ message: err.message });
+      }
+      return res.json({ message: 'File uploaded successfully' });
+    });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+});
+
+app.post('/api/upload', async (req, res) => {
+  try {
+    await upload.single('file')(req, res, (err) => {
+      if (err) {
+        return res.status(400).json({ message: err.message });
+      }
+      return res.json({ message: 'File uploaded successfully' });
+    });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+});
+
+
+
+// SIGNUP API
 app.post("/api/signup", async (req, res) => {
   console.log(req.body);
   try {
@@ -30,6 +101,8 @@ app.post("/api/signup", async (req, res) => {
   }
 });
 
+
+// SIGNIN API
 app.post("/api/signin", async (req, res) => {
   console.log(req.body);
   const user = await User.findOne({
@@ -57,6 +130,7 @@ app.post("/api/signin", async (req, res) => {
 });
 
 
+// PROFILE API
 app.get("/api/profile", async (req, res) => {
   const token = req.headers['x-access-token']
 
@@ -71,10 +145,10 @@ app.get("/api/profile", async (req, res) => {
     console.log(error)
     console.log(process.env.JWT_KEY)
   }
-  
-  
 });
 
+
+// SERVER LISTEN
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
 });
