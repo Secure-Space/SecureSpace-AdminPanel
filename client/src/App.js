@@ -15,6 +15,7 @@ import Notification from "./pages/notification/Notification";
 import Profile from "./pages/profile/Profile";
 
 import Upload from "./pages/UploadImage/Upload";
+import Faces from "./pages/Faces/Faces";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/notif" element={<Notification />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/upload" element={<Upload />} />
+              <Route path="/faces" element={<Faces />} />
             </Route>
           </Routes>
         </BrowserRouter>

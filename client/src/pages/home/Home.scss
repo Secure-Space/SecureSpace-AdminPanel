@@ -18,7 +18,10 @@
       color: white;
       font-size: 24px;
       .row1{
+        display: flex;
+        flex-direction: row;
         margin-top: 60px;
+        justify-content: space-evenly;
         .redirect{
           text-decoration: none;
             color: #2b2b2b;
@@ -28,6 +31,7 @@
           font-size: 50px;
           height: 70px;
           width: 70px;
+         
         }
         .item{
           height: 330px;
@@ -39,6 +43,7 @@
           justify-content: space-evenly;
           align-items: center;
           font-size: 30px;
+          
         }
         .item:hover{
           background-color: #fcba57ce;

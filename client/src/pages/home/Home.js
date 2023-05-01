@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { UilUpload } from '@iconscout/react-unicons'
+import { UilUpload, UilHeadSide } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom";
 
 import "./Home.scss";
@@ -38,10 +38,16 @@ const Home = () => {
         <div className="contentcontainer">
           Welcome back, {uname}
           <div className="row1">
-            <Link to="/Upload" className="redirect">
+            <Link to="/upload" className="redirect">
             <div className="item">
               <UilUpload className="icon"></UilUpload>
               Upload
+            </div>
+            </Link>
+            <Link to="/faces" className="redirect">
+            <div className="item">
+              <UilHeadSide className="icon"></UilHeadSide>
+              Trusted Faces
             </div>
             </Link>
           </div>
