@@ -22,8 +22,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// DB ADDRESS
-mongoose.connect("mongodb://localhost:27017/secure-space");
+async function startServer(){
+  await mongoose.connect(process.env.MONGO_URL);
+  
+  app.listen(PORT, () => {
+  console.log(`Listening on PORT ${PORT}`);
+});
+}
+startServer();
+
 
 // S3 BUCKET
 const s3 = new aws.S3({
@@ -148,7 +155,4 @@ app.get("/api/profile", async (req, res) => {
 });
 
 
-// SERVER LISTEN
-app.listen(PORT, () => {
-  console.log(`Listening on PORT ${PORT}`);
-});
+

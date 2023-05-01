@@ -8,7 +8,7 @@ const User = new mongoose.Schema(
     age: { type: Number, required: false },
     address: { type: String, required: false },
   },
-  { collection: " user-data" }
+  { collection: "user-data" }
 );
 
 const model = mongoose.model("UserData", User);
