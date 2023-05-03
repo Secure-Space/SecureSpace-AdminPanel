@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion'
 
 import './Notification.scss';
 
@@ -8,7 +9,9 @@ const Notification = () => {
   return (
     <div className='Notification'>
       <SideBar/>
-      <div className='container'>
+      <motion.div className='container'
+      initial={{opacity:0.5, }}
+      animate={{opacity:1, }}>
         <h1>Notifications</h1>
         <div className='contentcontainer'>
           {/* new box */}
@@ -32,7 +35,7 @@ const Notification = () => {
           <div className='NotifContain'>Notification</div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

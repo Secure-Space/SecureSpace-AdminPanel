@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../../firebase/firebase";
+import {motion} from 'framer-motion'
 
 import "./SignIn.scss";
 
@@ -37,7 +36,11 @@ const SignIn = () => {
     }
   }
   return (
-    <div className="SignIn">
+    <motion.div className="SignIn"
+    initial={{opacity:0, x:-150}}
+    animate={{opacity:1, x:0}}
+    transition={{duration:1}}
+    >
       <div className="container">
         <div className="logocontain">
           <img src={Logo} alt="" className="logo" />
@@ -84,7 +87,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

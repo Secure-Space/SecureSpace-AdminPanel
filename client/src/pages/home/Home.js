@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { UilUpload, UilHeadSide } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom";
+import {motion} from 'framer-motion'
 
 import "./Home.scss";
 
@@ -31,7 +32,11 @@ const Home = () => {
   },[])
 
   return (
-    <div className="Home">
+    <motion.div className="Home"
+    initial={{opacity:0, x:-150}}
+    animate={{opacity:1, x:0}}
+    transition={{duration:1}}
+    >
       <SideBar />
       <div className="container">
        <h1 className="title">Home</h1>
@@ -54,7 +59,7 @@ const Home = () => {
         </div>
       </div>
       
-    </div>
+    </motion.div>
   );
 };
 

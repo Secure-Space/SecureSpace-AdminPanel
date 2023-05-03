@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {motion} from 'framer-motion'
 
 import "./Profile.scss";
 
@@ -33,7 +34,10 @@ const Profile = () => {
   return (
     <div className="Profile">
       <SideBar />
-      <div className="container">
+      <motion.div className="container"
+      initial={{opacity:0.5, }}
+      animate={{opacity:1, }}
+      >
         <h1 className="title">Profile</h1>
         <div className="contentcontainer">
           <div className="row1">
@@ -57,7 +61,7 @@ const Profile = () => {
               </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

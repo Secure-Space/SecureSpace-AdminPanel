@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 import { PieChart } from "react-minimal-pie-chart";
+import {motion} from 'framer-motion'
 
 import "./Feed.scss";
 import "./Calendar.css";
@@ -11,9 +12,13 @@ const Feed = () => {
   const [date, setDate] = useState(new Date());
 
   return (
-    <div className="Feed">
+    <motion.div className="Feed">
       <SideBar />
-      <div className="container">
+      <motion.div className="container"
+      initial={{opacity:0.5, }}
+      animate={{opacity:1, }}
+      // transition={{duration:1}}
+      >
         <h1 className="title">Feed</h1>
         <div className="contentcontainer">
           <div className="row1">
@@ -48,8 +53,8 @@ const Feed = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
