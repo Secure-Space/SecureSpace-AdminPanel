@@ -9,11 +9,11 @@ const Notification = () => {
   return (
     <div className='Notification'>
       <SideBar/>
-      <motion.div className='container'
-      initial={{opacity:0.5, }}
+      <div className='container'>
+        <h1 style={{fontSize: '40px'}}>Notifications</h1>
+      <motion.div className='contentcontainer'
+      initial={{opacity:0, }}
       animate={{opacity:1, }}>
-        <h1>Notifications</h1>
-        <div className='contentcontainer'>
           {/* new box */}
           <div className='NotifBox'>
           <text className='time'>Today</text>
@@ -34,8 +34,8 @@ const Notification = () => {
           <text className='time'>Miscellaneous</text>
           <div className='NotifContain'>Notification</div>
           </div>
-        </div>
       </motion.div>
+        </div>
     </div>
   )
 }

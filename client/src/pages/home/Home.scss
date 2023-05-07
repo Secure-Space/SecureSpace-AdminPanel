@@ -9,6 +9,7 @@
     padding-top: 50px;
     .title {
       color: white;
+      font-size: 40px;
     }
     .contentcontainer{
       display: flex;
@@ -16,25 +17,27 @@
       margin-top: 60px;
       width: 85%;
       color: white;
-      font-size: 24px;
+      // font-size: 24px;
       .row1{
         display: flex;
         flex-direction: row;
-        margin-top: 60px;
-        justify-content: space-evenly;
+        margin-top: 40px;
+        justify-content: flex-start;
+        gap: 30px;
+        // background-color: white;
         .redirect{
           text-decoration: none;
             color: #2b2b2b;
             // margin-left:2px;
         }
         .icon{
-          font-size: 50px;
-          height: 70px;
-          width: 70px;
+          font-size: 20px;
+          height: 40px;
+          width: 40px;
          
         }
         .item{
-          height: 330px;
+          height: 100px;
           width: 200px;
           border-radius: 30px;
           background-color: #fcba5797;
@@ -42,13 +45,29 @@
           flex-direction: column;
           justify-content: space-evenly;
           align-items: center;
-          font-size: 30px;
+          font-size: 20px;
           
         }
         .item:hover{
           background-color: #fcba57ce;
           transition: 0.5s;
           cursor: pointer;
+        }
+      }
+      .row2{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 80px;
+        margin-top: 50px;
+        .ActPie {
+          display: flex;
+          justify-content: center;
+          object-fit: contain;
+          // margin-left: 30px;
+          .Pie {
+            height: 90%;
+          }
         }
       }
     }

@@ -34,12 +34,12 @@ const Profile = () => {
   return (
     <div className="Profile">
       <SideBar />
-      <motion.div className="container"
-      initial={{opacity:0.5, }}
+      <div className="container">
+        <h1 className="title">Profile</h1>
+      <motion.div className="contentcontainer"
+      initial={{opacity:0, }}
       animate={{opacity:1, }}
       >
-        <h1 className="title">Profile</h1>
-        <div className="contentcontainer">
           <div className="row1">
             <div className="Ppic"></div>
             <div className="PName">
@@ -60,8 +60,8 @@ const Profile = () => {
               <text className="Etitle">EMERGENCY CONTACTS</text>
               </div>
           </div>
-        </div>
       </motion.div>
+        </div>
     </div>
   );
 };
