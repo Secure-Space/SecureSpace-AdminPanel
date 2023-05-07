@@ -50,6 +50,9 @@ const upload = multer({
     acl: 'public-read', 
     ContentType: 'image/jpeg',
     contentDisposition:'attachment',
+    key: function (req, file, cb) {
+      cb(null, file.originalname);
+    },
     shouldTransform: function (req, file, cb) {
       cb(null, /^image/i.test(file.mimetype))
     },
@@ -78,18 +81,18 @@ app.post('/api/upload', async (req, res) => {
   }
 });
 
-app.post('/api/upload', async (req, res) => {
-  try {
-    await upload.single('file')(req, res, (err) => {
-      if (err) {
-        return res.status(400).json({ message: err.message });
-      }
-      return res.json({ message: 'File uploaded successfully' });
-    });
-  } catch (err) {
-    return res.status(500).json({ message: err.message });
-  }
-});
+// app.post('/api/upload', async (req, res) => {
+//   try {
+//     await upload.single('file')(req, res, (err) => {
+//       if (err) {
+//         return res.status(400).json({ message: err.message });
+//       }
+//       return res.json({ message: 'File uploaded successfully' });
+//     });
+//   } catch (err) {
+//     return res.status(500).json({ message: err.message });
+//   }
+// });
 
 
 
