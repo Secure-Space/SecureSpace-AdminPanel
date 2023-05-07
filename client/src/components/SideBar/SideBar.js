@@ -25,44 +25,49 @@ const SideBar = () => {
       <div className="contents">
         <ul>
         <Link to="/home" className="link">
-          <li>
+          <motion.li
+          whileHover={{fontSize:'25px'}}>
             <UilEstate />
-            <motion.span className="text"
-              whileHover={{scale:1.1}}
-            >Home</motion.span>
-          </li>
+            <span className="text"
+              
+            >Home</span>
+          </motion.li>
           </Link>
           <Link to="/feed" className="link">
-          <li>
+          <motion.li
+          whileHover={{fontSize:'25px'}}>
             <UilVideo />
-            <motion.span className="text"
-              whileHover={{scale:1.1}}
-            >Feed</motion.span>
-          </li>
+            <span className="text"
+              // whileHover={{scale:1.1}}
+            >Feed</span>
+          </motion.li>
           </Link>
           <Link to="/notif" className="link">
-          <li>
+          <motion.li
+          whileHover={{fontSize:'25px'}}>
             <UilBell />
-            <motion.span className="text"
-              whileHover={{scale:1.1}}
-            >Notifications</motion.span>
-          </li>
+            <span className="text"
+              // whileHover={{scale:1.1}}
+            >Notifications</span>
+          </motion.li>
           </Link>
           <Link to="/profile" className="link">
-          <li>
+          <motion.li
+          whileHover={{fontSize:'25px'}}>
             <UilUser />
-            <motion.span className="text"
-              whileHover={{scale:1.1}}
-            >Profile</motion.span>
-          </li>
+            <span className="text"
+              // whileHover={{scale:1.1}}
+            >Profile</span>
+          </motion.li>
           </Link>
           <Link to="/" className="link">
-          <li>
+          <motion.li
+          whileHover={{fontSize:'25px'}}>
             <UilSignout />
-            <motion.span className="text"
-              whileHover={{scale:1.1}}
-            >Sign Out</motion.span>
-          </li>
+            <span className="text"
+              // whileHover={{scale:1.1}}
+            >Sign Out</span>
+          </motion.li>
           </Link>
         </ul>
       </div>
