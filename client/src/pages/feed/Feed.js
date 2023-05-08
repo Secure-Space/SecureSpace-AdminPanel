@@ -23,21 +23,19 @@ const Feed = () => {
           <div className="row1">
             <div className="Calcontainer">
               <div className="subtitle">
-                Calendar
+                
               </div>
               
             </div>
             <div className="Surveicontainer">
               <div className="subtitle">
-                Surveillance
+                
               </div>
             </div>
           </div>
           <div className="row2">
             <div className="subtitle">
-              User Activities
             </div>
-            <div className="ActBar">ACTIVITY CHART</div>
            
           </div>
       </motion.div>

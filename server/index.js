@@ -81,20 +81,6 @@ app.post('/api/upload', async (req, res) => {
   }
 });
 
-// app.post('/api/upload', async (req, res) => {
-//   try {
-//     await upload.single('file')(req, res, (err) => {
-//       if (err) {
-//         return res.status(400).json({ message: err.message });
-//       }
-//       return res.json({ message: 'File uploaded successfully' });
-//     });
-//   } catch (err) {
-//     return res.status(500).json({ message: err.message });
-//   }
-// });
-
-
 
 // SIGNUP API
 app.post("/api/signup", async (req, res) => {
@@ -149,7 +135,7 @@ app.get("/api/profile", async (req, res) => {
   const name = decoded.name
   // const email = decoded.email
   const user = await User.findOne({name:name})
-  return res.json({status:'ok', name:user.name, email:user.email})
+  return res.json({status:'ok', name:user.name, email:user.email,age:user.age,gender:user.gender,add:user.add,phone:user.phone})
   }
   catch(error){
     console.log(error)
@@ -157,5 +143,31 @@ app.get("/api/profile", async (req, res) => {
   }
 });
 
-
+// EDIT PROFILE API
+app.put("/api/profile/edit", async (req, res) => {
+  console.log(req.body);
+  try {
+    const user = await User.findOneAndUpdate(
+      {
+        email: req.body.email,
+      },
+      {
+      name: req.body.name,
+      age:req.body.age,
+      gender:req.body.gender,
+      add:req.body.add,
+      phone:req.body.phone,
+    },
+    {new:true}
+    );
+    if(user){
+    res.json({ status: "ok" });
+    }else{
+      res.json({ status: "error", error: "User not found" })
+    }
+  } catch (err) {
+    console.log(err)
+    res.json({ status: "error", error: "Duplicate email" });
+  }
+});
 
