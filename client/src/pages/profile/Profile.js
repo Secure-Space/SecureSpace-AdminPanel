@@ -55,7 +55,7 @@ const Profile = () => {
     const data = await response.json();
     console.log(data);
     if (data.status === "ok") {
-      alert("Profile has been updated!");
+      console.log("Profile has been updated!");
     }
   }
 
@@ -93,15 +93,16 @@ const Profile = () => {
             <div className="Pdetails">
               <span className="Ptitle">
                 PERSONAL DETAILS{" "}
-                <button onClick={toggleButton}>{toggle ? "SAVE" : "EDIT"}</button>
+                <button onClick={toggleButton} className="toggleButton">{toggle ? "SAVE" : "EDIT"}</button>
               </span>
               <span>
                 Name:
                 {toggle ? (
                   <input
                     defaultValue={name}
-                    style={{ marginLeft: "32px" }}
+                    style={{ marginLeft: "32px", borderRadius:'8px', paddingLeft:'4px'}}
                     onChange={(e) => setName(e.target.value)}
+                    
                   />
                 ) : (
                   name
@@ -110,7 +111,7 @@ const Profile = () => {
               <span>
                 Age:{" "}
                 {toggle ? (
-                  <input defaultValue={age} style={{ marginLeft: "42px" }} 
+                  <input defaultValue={age} style={{ marginLeft: "42px", borderRadius:'8px', paddingLeft:'4px' }} 
                   onChange={(e) => setAge(e.target.value)}
                   />
                 ) : (
@@ -120,8 +121,10 @@ const Profile = () => {
               <span>
                 Gender:{" "}
                 {toggle ? (
-                  <input defaultValue={gender} style={{ marginLeft: "17px" }} 
+                  <input defaultValue={gender} style={{ marginLeft: "17px", borderRadius:'8px', paddingLeft:'4px' }} 
                   onChange={(e) => setGender(e.target.value)}
+                  maxLength={1}
+                  placeholder="M/F"
                   />
                 ) : (
                   gender
@@ -130,7 +133,7 @@ const Profile = () => {
               <span>
                 Address:{" "}
                 {toggle ? (
-                  <input defaultValue={add} style={{ marginLeft: "12px" }} 
+                  <input defaultValue={add} style={{ marginLeft: "12px", borderRadius:'8px', paddingLeft:'4px' }} 
                   onChange={(e) => setAdd(e.target.value)}
                   />
                 ) : (
@@ -140,7 +143,7 @@ const Profile = () => {
               <span>
                 Phone No:{" "}
                 {toggle ? (
-                  <input defaultValue={phone} style={{ marginLeft: "0px" }}
+                  <input defaultValue={phone} style={{ marginLeft: "0px" , borderRadius:'8px', paddingLeft:'4px'}}
                   onChange={(e) => setPhone(e.target.value)}
                   />
                 ) : (
