@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { UilEdit } from '@iconscout/react-unicons'
 
 import "./Profile.scss";
 
 import SideBar from "../../components/SideBar/SideBar";
+
+import avatar from '../../assets/avatar.png'
 
 const Profile = () => {
   // const [userData, setUserData] = useState('');
@@ -86,14 +89,16 @@ const Profile = () => {
           animate={{ opacity: 1 }}
         >
           <div className="row1">
-            <div className="Ppic"></div>
+            {/* <div className="Ppic"> */}
+              <img src={avatar} alt='none' className="Ppic"/>
+            {/* </div> */}
             <div className="PName">{name}</div>
           </div>
           <div className="row2">
             <div className="Pdetails">
               <span className="Ptitle">
                 PERSONAL DETAILS{" "}
-                <button onClick={toggleButton} className="toggleButton">{toggle ? "SAVE" : "EDIT"}</button>
+                <button onClick={toggleButton} className="toggleButton">{toggle ? "SAVE" : <UilEdit style={{}}/>}</button>
               </span>
               <span>
                 Name:

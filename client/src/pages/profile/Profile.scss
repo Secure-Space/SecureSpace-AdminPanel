@@ -9,7 +9,7 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     .title {
-      color: white;
+      color: #fcbc5b;
       font-size: 40px;
     }
     .contentcontainer {
@@ -22,7 +22,8 @@
         // flex: 1;
         flex-direction: row;
         margin-top: 60px;
-        justify-content: center;
+        justify-content: space-around;
+        align-items:center;
         .Ppic {
             background-color: black;
             height: 170px;
@@ -59,13 +60,20 @@
           margin-right: 30px;
           .Ptitle {
             border-bottom: 2px solid black;
+            // padding-top: 1px;
+            // margin-bottom: 5px;
+            // display: flex;
+            // align-items: center;
             .toggleButton{
               width: 3.4rem;
+              // height: 10px
+              object-fit: contain;
+              // font-size: 10px;
               margin-left: 12rem;
               margin-bottom: 4px;
               border: 1px solid black;
                border-radius: 10px;
-               background-color: white;
+               background-color: #ffbd59;
             }
           }
         }

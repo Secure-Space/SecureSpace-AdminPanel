@@ -51,16 +51,17 @@ const Home = () => {
           Welcome, {uname}
           </span>
           <div className="row1">
-            <Link to="/upload" className="redirect">
-            <div className="item">
-              <UilUpload className="icon"></UilUpload>
-              Upload
-            </div>
-            </Link>
+            
             <Link to="/faces" className="redirect">
             <div className="item">
               <UilHeadSide className="icon"></UilHeadSide>
               Trusted Faces
+            </div>
+            </Link>
+            <Link to="/upload" className="redirect">
+            <div className="item">
+              <UilUpload className="icon"></UilUpload>
+              Upload
             </div>
             </Link>
           </div>

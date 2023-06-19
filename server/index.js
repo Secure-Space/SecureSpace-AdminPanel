@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 
@@ -16,7 +15,7 @@ require('dotenv').config();
 
 const User = require("./models/user.model");
 
-// PORT and EXPRESS
+// PORT / EXPRESS / MONGODB
 const PORT = 8000;
 const app = express();
 app.use(cors());
@@ -43,6 +42,7 @@ const s3 = new aws.S3({
 
 
 // AWS configuration and image processing
+// let uploadPic = multer({ storage, fileFilter });
 const upload = multer({
   storage: multerS3({
     s3: s3,

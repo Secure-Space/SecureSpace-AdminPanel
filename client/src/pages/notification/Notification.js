@@ -10,7 +10,7 @@ const Notification = () => {
     <div className='Notification'>
       <SideBar/>
       <div className='container'>
-        <h1 style={{fontSize: '40px'}}>Notifications</h1>
+        <h1 style={{fontSize: '40px', color:'#fcbc5b'}}>Notifications</h1>
       <motion.div className='contentcontainer'
       initial={{opacity:0, }}
       animate={{opacity:1, }}>

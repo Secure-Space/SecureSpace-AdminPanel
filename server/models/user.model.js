@@ -9,6 +9,7 @@ const User = new mongoose.Schema(
     add: { type: String, required: false },
     gender:{type:String, required:false},
     phone:{type:Number, required:false},
+    photo:{type:Buffer, required:false},
   },
   { collection: "user-data" }
 );
